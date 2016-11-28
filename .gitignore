@@ -1,4 +1,6 @@
+# Most reliable gitignore file for Magento 2 -> https://firebearstudio.com/blog/magento-2-gitignore.html
 # https://github.com/magento/magento2-community-edition/blob/master/.gitignore
+
 magento/.buildpath
 magento/.cache
 magento/.metadata

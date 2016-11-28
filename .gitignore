@@ -1,3 +1,4 @@
+# https://github.com/magento/magento2-community-edition/blob/master/.gitignore
 magento/.buildpath
 magento/.cache
 magento/.metadata
@@ -60,6 +61,6 @@ magento/vendor
 
 magento/*.*
 
-magento/!/composer.json
-magento/!/composer.lock
-magento/!/README.md
+!/magento/composer.json
+!/magento/composer.lock
+!/magento/README.md

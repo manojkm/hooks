@@ -11,7 +11,7 @@
             <image id="bundled_product_customization_page" type="thumbnail">
                 <width>140</width>
                 <height>140</height>
-            </image>
+            </image> 
             <image id="cart_cross_sell_products" type="thumbnail">
                 <width>200</width>
                 <height>248</height>

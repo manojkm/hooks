@@ -55,6 +55,8 @@ magento/lib
 
 magento/pub
 
+magento/node_modules
+
 magento/setup
 
 magento/var

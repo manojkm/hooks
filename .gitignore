@@ -68,3 +68,5 @@ magento/*.*
 !/magento/composer.json
 !/magento/composer.lock
 !/magento/README.md
+
+creds.txt

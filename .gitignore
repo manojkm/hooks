@@ -20,6 +20,7 @@ magento/app/*.*
 
 magento/bin
 
+
 magento/dev/shell
 
 magento/dev/tests/*/framework

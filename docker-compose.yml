@@ -17,8 +17,8 @@ appdata:
   volumes:
     - /var/www/html
     - ~/.composer:/var/www/.composer
-    - ./app/code:/var/www/html/app/code
-    - ./app/design:/var/www/html/app/design
+    - ./html/app/code:/var/www/html/app/code
+    - ./html/app/design:/var/www/html/app/design
 
 phpfpm:
   image: mageinferno/magento2-php:7.0-fpm-0

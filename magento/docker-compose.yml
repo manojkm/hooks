@@ -1,0 +1,77 @@
+# Mage Inferno Docker Compose (https://github.com/mageinferno/magento2-docker-compose)
+# Version 5.0.0
+
+app:
+  image: mageinferno/magento2-nginx:1.11-0
+  links:
+    - phpfpm
+    - db
+    - phpmyadmin
+  volumes_from:
+    - appdata
+  ports:
+    - 8000:80
+
+appdata:
+  image: tianon/true
+  volumes:
+    - /var/www/html
+    - ~/.composer:/var/www/.composer
+    - ./app/code:/var/www/html/app/code
+    - ./app/design:/var/www/html/app/design
+
+phpfpm:
+  image: mageinferno/magento2-php:7.0-fpm-0
+  links:
+    - db
+  volumes_from:
+    - appdata
+
+db:
+  image: percona:5.7
+  volumes_from:
+    - dbdata
+  ports:
+    - 8001:3306
+  environment:
+    - MYSQL_ROOT_PASSWORD=mysql
+    - MYSQL_DATABASE=hooksdb
+    - MYSQL_USER=hookuser
+    - MYSQL_PASSWORD=hook321*#
+
+dbdata:
+  image: tianon/true
+  volumes:
+    - /var/lib/mysql
+
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  container_name: phpmyadmin_hooks
+  ports:
+    - "8580:80"
+  links:
+    - db   
+
+setup:
+  image: mageinferno/magento2-php:7.0-fpm-0
+  command: /usr/local/bin/mage-setup
+  links:
+    - db
+  volumes_from:
+    - appdata
+  environment:
+    - M2SETUP_DB_HOST=db
+    - M2SETUP_DB_NAME=hooksdb
+    - M2SETUP_DB_USER=hookuser
+    - M2SETUP_DB_PASSWORD=hook321*#
+    - M2SETUP_BASE_URL=http://m2.localhost:8000/
+    - M2SETUP_ADMIN_FIRSTNAME=manoj 
+    - M2SETUP_ADMIN_LASTNAME=kumar
+    - M2SETUP_ADMIN_EMAIL=tvmmanu@gmail.com
+    - M2SETUP_ADMIN_USER=hooks
+    - M2SETUP_ADMIN_PASSWORD=hooksadmin312*#
+    - M2SETUP_VERSION=2.1.2
+    - M2SETUP_USE_SAMPLE_DATA=true
+    - M2SETUP_USE_ARCHIVE=false
+    - M2SETUP_USE_COMPOSER_ENTERPRISE=false

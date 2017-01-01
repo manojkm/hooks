@@ -67,6 +67,7 @@ magento/*.*
 
 !/magento/composer.json
 !/magento/composer.lock
+!/magento/docker-compose.yml
 !/magento/README.md
 
 creds.txt

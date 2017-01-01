@@ -1,73 +1,71 @@
 # Most reliable gitignore file for Magento 2 -> https://firebearstudio.com/blog/magento-2-gitignore.html
 # https://github.com/magento/magento2-community-edition/blob/master/.gitignore
 
-magento/.buildpath
-magento/.cache
-magento/.metadata
-magento/.project
-magento/.settings
-magento/atlassian*
-magento/nbproject
-magento/sitemap
-magento/.idea
-magento/.gitattributes
+html/.buildpath
+html/.cache
+html/.metadata
+html/.project
+html/.settings
+html/atlassian*
+html/nbproject
+html/sitemap
+html/.idea
+html/.gitattributes
 
-magento/app/code/Magento
-magento/app/design/*/Magento
-magento/app/etc
-magento/app/i18n/magento
-magento/app/*.*
+html/app/code/Magento
+html/app/design/*/Magento
+html/app/etc
+html/app/i18n/magento
+html/app/*.*
 
-magento/bin
+html/bin
 
-magento/dev/shell
+html/dev/shell
 
-magento/dev/tests/*/framework
-magento/dev/tests/*/testsuite/Magento
-magento/dev/tests/*/tmp
-magento/dev/tests/*/etc
-magento/dev/tests/*/*.*
-magento/dev/tests/*.*
-magento/dev/tests/api-functional/config
-magento/dev/tests/api-functional/_files/Magento
-magento/dev/tests/js/JsTestDriver/framework
-magento/dev/tests/js/JsTestDriver/testsuite/lib
-magento/dev/tests/js/JsTestDriver/testsuite/mage
-magento/dev/tests/js/JsTestDriver/*.*
-magento/dev/tests/js/jasmine/assets
-magento/dev/tests/js/jasmine/spec_runner
-magento/dev/tests/js/jasmine/tests/app/code/Magento
-magento/dev/tests/js/jasmine/tests/lib/mage
-magento/dev/tests/js/jasmine/*.*
-magento/dev/tests/performance
-magento/dev/tests/functional/lib/Magento
-magento/dev/tests/functional/tests/app/Magento
-magento/dev/tests/functional/testsuites/Magento
-magento/dev/tests/functional/utils
+html/dev/tests/*/framework
+html/dev/tests/*/testsuite/Magento
+html/dev/tests/*/tmp
+html/dev/tests/*/etc
+html/dev/tests/*/*.*
+html/dev/tests/*.*
+html/dev/tests/api-functional/config
+html/dev/tests/api-functional/_files/Magento
+html/dev/tests/js/JsTestDriver/framework
+html/dev/tests/js/JsTestDriver/testsuite/lib
+html/dev/tests/js/JsTestDriver/testsuite/mage
+html/dev/tests/js/JsTestDriver/*.*
+html/dev/tests/js/jasmine/assets
+html/dev/tests/js/jasmine/spec_runner
+html/dev/tests/js/jasmine/tests/app/code/Magento
+html/dev/tests/js/jasmine/tests/lib/mage
+html/dev/tests/js/jasmine/*.*
+html/dev/tests/performance
+html/dev/tests/functional/lib/Magento
+html/dev/tests/functional/tests/app/Magento
+html/dev/tests/functional/testsuites/Magento
+html/dev/tests/functional/utils
 
-magento/dev/tools/Magento
-magento/dev/tools/grunt
-magento/dev/tools/*.*
+html/dev/tools/Magento
+html/dev/tools/grunt
+html/dev/tools/*.*
 
-magento/dev/*.*
+html/dev/*.*
 
-magento/lib
+html/lib
 
-magento/pub
+html/pub
 
-magento/node_modules
+html/node_modules
 
-magento/setup
+html/setup
 
-magento/var
+html/var
 
-magento/vendor
+html/vendor
 
-magento/*.*
+html/*.*
 
-!/magento/composer.json
-!/magento/composer.lock
-!/magento/docker-compose.yml
-!/magento/README.md
-
-creds.txt
+!/html/composer.json
+!/html/composer.lock
+!/html/docker-compose.yml
+!/html/README.md

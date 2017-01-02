@@ -3,6 +3,7 @@
 
 app:
   image: mageinferno/magento2-nginx:1.11-0
+  container_name: hooks_app
   links:
     - phpfpm
     - db
@@ -14,14 +15,16 @@ app:
 
 appdata:
   image: tianon/true
+  container_name: hooks_app_data
   volumes:
     - /var/www/html
     - ~/.composer:/var/www/.composer
-    - ./html/app/code:/var/www/html/app/code
-    - ./html/app/design:/var/www/html/app/design
+    # - ./html/app/code:/var/www/html/app/code
+    # - ./html/app/design:/var/www/html/app/design
 
 phpfpm:
   image: mageinferno/magento2-php:7.0-fpm-0
+  container_name: hooks_php_fpm
   links:
     - db
   volumes_from:
@@ -29,6 +32,7 @@ phpfpm:
 
 db:
   image: percona:5.7
+  container_name: hooks_db
   volumes_from:
     - dbdata
   ports:
@@ -41,13 +45,14 @@ db:
 
 dbdata:
   image: tianon/true
+  container_name: hooks_db_data
   volumes:
     - /var/lib/mysql
 
 
 phpmyadmin:
   image: phpmyadmin/phpmyadmin
-  container_name: phpmyadmin_hooks
+  container_name: hooks_phpmyadmin
   ports:
     - "8580:80"
   links:

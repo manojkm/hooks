@@ -8,6 +8,7 @@ app:
     - phpfpm
     - db
     - phpmyadmin
+    - nodejs
   volumes_from:
     - appdata
   ports:
@@ -22,6 +23,7 @@ appdata:
     - ./html/app/code:/var/www/html/app/code 
     - ./html/app/design:/var/www/html/app/design
     - ./html/.htaccess:/var/www/html/.htaccess
+    - ./html/package.json:/var/www/html/package.json
 
 phpfpm:
   image: mageinferno/magento2-php:7.0-fpm-0
@@ -58,6 +60,16 @@ phpmyadmin:
     - "8580:80"
   links:
     - db   
+
+nodejs:
+  image: node
+  container_name: node
+  volumes_from:
+  - appdata
+  ports:
+    - "8590:80"
+#docker-compose run --rm nodejs npm install -g grunt-cli
+
 
 setup:
   image: mageinferno/magento2-php:7.0-fpm-0

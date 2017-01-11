@@ -8,7 +8,7 @@ app:
     - phpfpm
     - db
     - phpmyadmin
-    - nodejs
+    - node
   volumes_from:
     - appdata
   ports:
@@ -24,6 +24,7 @@ appdata:
     - ./html/app/design:/var/www/html/app/design
     - ./html/.htaccess:/var/www/html/.htaccess
     - ./html/package.json:/var/www/html/package.json
+    - ./html/Gruntfile.js:/var/www/html/Gruntfile.js
 
 phpfpm:
   image: mageinferno/magento2-php:7.0-fpm-0
@@ -61,14 +62,16 @@ phpmyadmin:
   links:
     - db   
 
-nodejs:
-  image: node
-  container_name: node
+node:
+  build: ./docker/node
+  container_name: hooks_node
   volumes_from:
-  - appdata
-  ports:
-    - "8590:80"
-#docker-compose run --rm nodejs npm install -g grunt-cli
+    - appdata
+
+# https://github.com/joshporter/magento2-docker
+# docker-compose run --rm node npm install -g grunt-cli
+# docker-compose run --rm node npm install
+# docker-compose run --rm node grunt <task>
 
 
 setup:

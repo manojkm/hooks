@@ -20,6 +20,9 @@ appdata:
   volumes:
     - /var/www/html
     - ~/.composer:/var/www/.composer
+# Copying the entire contents of the appdata data volume to your local machine.
+# >>> docker cp CONTAINERID:/var/www/html ./html
+# Then, just uncomment be;pw lines
     - ./html/app/code:/var/www/html/app/code 
     - ./html/app/design:/var/www/html/app/design
     - ./html/.htaccess:/var/www/html/.htaccess

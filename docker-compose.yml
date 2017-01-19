@@ -22,12 +22,13 @@ appdata:
     - ~/.composer:/var/www/.composer
 # Copying the entire contents of the appdata data volume to your local machine.
 # >>> docker cp CONTAINERID:/var/www/html ./html
-# Then, just uncomment be;pw lines
+# Then, just uncomment below lines
     - ./html/app/code:/var/www/html/app/code 
     - ./html/app/design:/var/www/html/app/design
     - ./html/.htaccess:/var/www/html/.htaccess
     - ./html/package.json:/var/www/html/package.json
     - ./html/Gruntfile.js:/var/www/html/Gruntfile.js
+    - ./html/dev/tools/grunt/configs/themes.js:/var/www/html/dev/tools/grunt/configs/themes.js
 
 phpfpm:
   image: mageinferno/magento2-php:7.0-fpm-0
@@ -56,7 +57,6 @@ dbdata:
   volumes:
     - /var/lib/mysql
 
-
 phpmyadmin:
   image: phpmyadmin/phpmyadmin
   container_name: hooks_phpmyadmin
@@ -70,12 +70,13 @@ node:
   container_name: hooks_node
   volumes_from:
     - appdata
+  links:
+    - phpfpm 
 
 # https://github.com/joshporter/magento2-docker
 # docker-compose run --rm node npm install -g grunt-cli
 # docker-compose run --rm node npm install
 # docker-compose run --rm node grunt <task>
-
 
 setup:
   image: mageinferno/magento2-php:7.0-fpm-0

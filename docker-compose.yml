@@ -8,7 +8,7 @@ app:
     - phpfpm
     - db
     - phpmyadmin
-    - node
+
   volumes_from:
     - appdata
   ports:
@@ -72,6 +72,8 @@ node:
     - appdata
   links:
     - phpfpm 
+  ports:
+    - 8120:80
 
 # https://github.com/joshporter/magento2-docker
 # docker-compose run --rm node npm install -g grunt-cli

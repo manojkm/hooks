@@ -80,6 +80,9 @@ node:
 # docker-compose run --rm node npm install
 # docker-compose run --rm node grunt <task>
 
+# Run command in stopped container - docker-compose run --rm node bash
+
+
 setup:
   image: mageinferno/magento2-php:7.0-fpm-0
   command: /usr/local/bin/mage-setup

@@ -45,7 +45,7 @@ Step3:
 docker-compose run --rm node grunt less:HookShops
 
 Step4:
-docker-compose run --rm node grunt watch:HookShop
+docker-compose run --rm node grunt watch:HookShops
 
 OR ----------------------------------
 

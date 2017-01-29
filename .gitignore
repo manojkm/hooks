@@ -47,6 +47,8 @@ html/dev/tests/functional/utils
 
 html/dev/tools/Magento
 html/dev/tools/grunt
+html/dev/tools/grunt/*
+html/dev/tools/grunt/configs/*
 !/html/dev/tools/grunt/configs/themes.js
 html/dev/tools/*.*
 

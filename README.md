@@ -63,4 +63,7 @@ docker-compose exec phpfpm ./bin/magento dev:source-theme:deploy --type=less --l
 step4:
 docker-compose run --rm node grunt less:HookShops
 
+---------------------------------------
 
+Create symlinks to custom LESS files
+docker-compose exec phpfpm ./bin/magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme=HookCompany/HookShops css/hooksStyle

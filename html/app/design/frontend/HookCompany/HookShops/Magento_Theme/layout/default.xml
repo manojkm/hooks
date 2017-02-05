@@ -7,7 +7,7 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="logo">
+        <referenceBlock name="logo" >
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/hookshop_logo.svg</argument>
                 <argument name="logo_img_width" xsi:type="number">111</argument>
@@ -22,6 +22,12 @@
                 <block name="twitter" class="Magento\Framework\View\Element\Template" template="Magento_Theme::footer/twitter.phtml" />
             </container>
         </referenceContainer>
+
+        
+
+            <!-- Remove Block in Layout  -->
+            <!-- <referenceBlock name="form.subscribe" remove="true" />
+            <referenceBlock name="footer_links" remove="true" /> -->
        
     </body>
 </page>

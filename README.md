@@ -3,7 +3,7 @@ blaahh.. Just learning git!!!!
 Sublime Text 3 Preference!!
 // File location : Packages/User/Default.sublime-theme
 
- [
+[
     {
         "class": "sidebar_label",
         "color": [0, 0, 0],
@@ -29,6 +29,22 @@ Sublime Text 3 Preference!!
     "dark_content": false
     }, 
 ]
+
+// User settings file : Preferences → Settings - User
+
+{
+    "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+    "font_size": 11,
+    "caret_style": "phase",
+    "highlight_line": true,
+    "fade_fold_buttons": false,
+    "ignored_packages":
+    [
+        "Vintage"
+    ]
+
+}
+
 
 -------------------------------------
 

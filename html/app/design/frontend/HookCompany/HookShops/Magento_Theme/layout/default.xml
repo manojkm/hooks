@@ -15,6 +15,44 @@
             </arguments>
         </referenceBlock>
 
+            <referenceContainer name="header.panel">
+                <container name="div.footer.additional" htmlTag="div" htmlClass="footer footer-additional" after="top.links">
+                  <block name="facebook1" class="Magento\Framework\View\Element\Template" template="Magento_Theme::footer/facebook.phtml" />
+                </container>
+            </referenceContainer>
+
+        <referenceContainer name="header-wrapper">
+
+            <!-- Method 1 with custom page  
+            Create header-test block in Magento admin panel
+            http://magento.stackexchange.com/questions/142189/how-to-add-manual-text-to-header-in-magento-2
+            -->
+            <block class="Magento\Framework\View\Element\Template" name="custom.block1" after="top.links" template="Magento_Theme::header/custom.phtml" />
+
+            <!-- Method 2 with-out custom page 
+            Create header-test block in Magento admin panel 
+            http://magento.stackexchange.com/questions/142189/how-to-add-manual-text-to-header-in-magento-2
+            -->
+            <block class="Magento\Cms\Block\Block" name="custom.block2" after="logo">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header-test</argument>
+                </arguments>
+            </block>
+
+        </referenceContainer>
+
+<!-- How to add extra container to page header in Magento 2 -->
+<referenceContainer name="header.container">
+    <container name="header.containertwo" as="header_containertwo" label="Page Header Container"  htmlTag="header" htmlClass="header-mini-container" after="header.panel.wrapper"/>
+</referenceContainer>
+
+<referenceContainer name="header.containertwo">
+    <block class="Magento\Framework\View\Element\Template" name="header.mini.container" template="Magento_Theme::header/custom.phtml" />
+</referenceContainer>
+ <!--  -->
+
+
+
         <referenceContainer name="footer">
             <container before="footer_links" name='social.links' htmlTag="ul" htmlClass="footer links">
                 <block name="facebook" class="Magento\Framework\View\Element\Template" template="Magento_Theme::footer/facebook.phtml" />
@@ -23,10 +61,19 @@
             </container>
         </referenceContainer>
 
-        
+
+        <referenceBlock name="top.links">
+            <referenceBlock name="register-link" remove="true" />           <!--for Create Account Link-->
+            <referenceBlock name="authorization-link" remove="true" />      <!--for Sign In Link  -->
+            <referenceBlock name="wish-list-link" remove="true" />          <!--for WishList Link-->
+            <referenceBlock name="my-account-link" remove="true" />         <!--for My Account Link-->
+        </referenceBlock>
+
+
 
             <!-- Remove Block in Layout  -->
-            <!-- <referenceBlock name="form.subscribe" remove="true" />
+            <!-- 
+            <referenceBlock name="form.subscribe" remove="true" />
             <referenceBlock name="footer_links" remove="true" /> -->
        
     </body>

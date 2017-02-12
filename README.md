@@ -1,7 +1,10 @@
 blaahh.. Just learning git!!!!
 ---------------------
-Sublime Text 3 Preference!!
+
+//
+//Sublime Text 3 Preference!!
 // File location : Packages/User/Default.sublime-theme
+//-----------------------------------------------------------------
 
 [
     {
@@ -45,11 +48,9 @@ Sublime Text 3 Preference!!
 
 }
 
-
--------------------------------------
-
-Grunt LESS process
-
+//
+// Grunt LESS process
+//-----------------------------------------------
 
 Step1:
 docker-compose run --rm node grunt clean:HookShops
@@ -79,7 +80,18 @@ docker-compose exec phpfpm ./bin/magento dev:source-theme:deploy --type=less --l
 step4:
 docker-compose run --rm node grunt less:HookShops
 
----------------------------------------
+//
+//Create symlinks to custom LESS files
+//-------------------------------------------------
 
-Create symlinks to custom LESS files
 docker-compose exec phpfpm ./bin/magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme=HookCompany/HookShops css/hooksStyle
+
+//
+// Running Magento CLI tool
+//-------------------------------------------------
+
+docker-compose exec phpfpm ./bin/magento
+
+
+
+

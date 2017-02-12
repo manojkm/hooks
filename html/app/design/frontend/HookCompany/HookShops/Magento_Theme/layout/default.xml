@@ -16,7 +16,7 @@
         </referenceBlock>
 
             <referenceContainer name="header.panel">
-                <container name="div.footer.additional" htmlTag="div" htmlClass="footer footer-additional" after="top.links">
+                <container name="div.footer.additional" htmlTag="div" htmlClass="heee heee-additional" after="top.links">
                   <block name="facebook1" class="Magento\Framework\View\Element\Template" template="Magento_Theme::footer/facebook.phtml" />
                 </container>
             </referenceContainer>
@@ -41,6 +41,8 @@
 
         </referenceContainer>
 
+
+
 <!-- How to add extra container to page header in Magento 2 -->
 <referenceContainer name="header.container">
     <container name="header.containertwo" as="header_containertwo" label="Page Header Container"  htmlTag="header" htmlClass="header-mini-container" after="header.panel.wrapper"/>
@@ -50,8 +52,6 @@
     <block class="Magento\Framework\View\Element\Template" name="header.mini.container" template="Magento_Theme::header/custom.phtml" />
 </referenceContainer>
  <!--  -->
-
-
 
         <referenceContainer name="footer">
             <container before="footer_links" name='social.links' htmlTag="ul" htmlClass="footer links">

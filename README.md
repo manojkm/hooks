@@ -92,6 +92,27 @@ docker-compose exec phpfpm ./bin/magento dev:source-theme:deploy --type="less" -
 
 docker-compose exec phpfpm ./bin/magento
 
+//
+// Install Pestle  - https://github.com/astorm/pestle, http://alanstorm.com/magento2_pestle_code_generation/
+//-------------------------------------------------
+
+Step1:
+docker exec -it b4605f680c82 bash
+
+Step2:
+curl -LO http://pestle.pulsestorm.net/pestle.phar
+
+You can see a list of commands with the following
+docker-compose exec phpfpm  php pestle.phar list
+
+Creating the Module
+docker-compose exec phpfpm  php pestle.phar generate_module
+
+Shell script
+pestle.phar generate_module Pulsestorm HelloPestle 0.0.1
+pestle.phar generate_route Pulsestorm_HelloPestle frontend hello_pestle
+pestle.phar generate_view Pulsestorm_HelloPestle frontend hello_pestle_index_index Main content.phtml
+
 
 
 
